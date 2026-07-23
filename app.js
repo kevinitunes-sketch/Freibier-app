@@ -20,6 +20,7 @@ db.collection("members")
       alert("Gespeichert");
   })
   .catch((error) => {
+    console.error(error);
       alert(error.message);
   });
 });

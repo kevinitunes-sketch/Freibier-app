@@ -100,6 +100,7 @@ function startScanner() {
        currentBeers = 0;
       
             document.getElementById("remainingBeer").textContent = "2";
+       giveBeerButton.disabled = false;
         }
 
     });

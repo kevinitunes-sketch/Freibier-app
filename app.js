@@ -42,7 +42,7 @@ db.collection("members")
 .then((result) => {
 
    
-
+alert("Zweiter then erreicht");
   currentBeers++;
 
 document.getElementById("usedBeer").textContent = currentBeers;

@@ -7,14 +7,15 @@ scannerButton.addEventListener("click", startScanner);
 
 giveBeerButton.addEventListener("click", () => {
 
-    console.log("Button geklickt");
+  if (currentMember === "") {
+    return;
+}
 
-    if (currentMember === "") {
-        return;
-    }
-
-    alert(currentMember);
-
+db.collection("members")
+  .doc(currentMember)
+  .set({
+      beers: 1
+  });
 });
 
 function startScanner() {

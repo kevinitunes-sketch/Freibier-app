@@ -47,10 +47,14 @@ function startScanner() {
     .get()
     .then((doc) => {
 
-        if (doc.exists) {
-            document.getElementById("usedBeer").textContent = doc.data().beers;
-            document.getElementById("remainingBeer").textContent = 2 - doc.data().beers;
-        } else {
+     if (doc.exists) {
+
+    alert(JSON.stringify(doc.data()));
+
+    document.getElementById("usedBeer").textContent = doc.data().beers;
+    document.getElementById("remainingBeer").textContent = 2 - doc.data().beers;
+
+} else {
             document.getElementById("usedBeer").textContent = "0";
             document.getElementById("remainingBeer").textContent = "2";
         }

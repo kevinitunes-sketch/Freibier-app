@@ -38,6 +38,7 @@ function startScanner() {
             document.getElementById("remainingBeer").textContent = "2";
 
             scanner.stop();
+            document.getElementById("scanner").style.display = "none";
 
         },
         (errorMessage) => {

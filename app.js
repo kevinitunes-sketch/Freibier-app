@@ -56,6 +56,7 @@ function startScanner() {
 
 } else {
             document.getElementById("usedBeer").textContent = "0";
+       alert(document.getElementById("usedBeer").textContent);
             document.getElementById("remainingBeer").textContent = "2";
         }
 

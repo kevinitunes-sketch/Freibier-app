@@ -83,11 +83,10 @@ function startScanner() {
 
      if (doc.exists) {
 
-    alert(JSON.stringify(doc.data()));
 
     document.getElementById("usedBeer").textContent = doc.data().beers;
        currentBeers = doc.data().beers;
-        alert(document.getElementById("usedBeer").textContent);
+ 
     document.getElementById("remainingBeer").textContent = 2 - doc.data().beers;
        if (doc.data().beers >= 2) {
     giveBeerButton.disabled = true;

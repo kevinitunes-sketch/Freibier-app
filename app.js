@@ -50,6 +50,7 @@ db.collection("members")
     document.getElementById("usedBeer").textContent = currentBeers;
     document.getElementById("remainingBeer").textContent = 2 - currentBeers;
 
+
 })
   .catch((error) => {
     console.error(error);
@@ -88,6 +89,11 @@ function startScanner() {
        currentBeers = doc.data().beers;
         alert(document.getElementById("usedBeer").textContent);
     document.getElementById("remainingBeer").textContent = 2 - doc.data().beers;
+       if (doc.data().beers >= 2) {
+    giveBeerButton.disabled = true;
+} else {
+    giveBeerButton.disabled = false;
+}
 
 } else {
             document.getElementById("usedBeer").textContent = "0";

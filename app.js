@@ -1,14 +1,20 @@
 let currentMember = "";
+
 const giveBeerButton = document.getElementById("giveBeer");
 const scannerButton = document.getElementById("startScanner");
 
 scannerButton.addEventListener("click", startScanner);
-giveBeerButton.addEventListener("click", () => {
-    if (currentMember === "") {
-    return;
-}
 
-alert(currentMember);
+giveBeerButton.addEventListener("click", () => {
+
+    console.log("Button geklickt");
+
+    if (currentMember === "") {
+        return;
+    }
+
+    alert(currentMember);
+
 });
 
 function startScanner() {
@@ -22,12 +28,12 @@ function startScanner() {
             qrbox: 250
         },
         (decodedText) => {
-            
 
             document.getElementById("memberCard").classList.remove("hidden");
-currentMember = decodedText;
 
-document.getElementById("memberNumber").textContent = currentMember;
+            currentMember = decodedText;
+
+            document.getElementById("memberNumber").textContent = currentMember;
             document.getElementById("usedBeer").textContent = "0";
             document.getElementById("remainingBeer").textContent = "2";
 

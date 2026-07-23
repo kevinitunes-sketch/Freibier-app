@@ -14,8 +14,8 @@ giveBeerButton.addEventListener("click", () => {
 db.collection("members")
   .doc(currentMember)
   .set({
-      beers: 1
-  })
+    beers: 1
+}, { merge: true })
   .then(() => {
       alert("Gespeichert");
   })

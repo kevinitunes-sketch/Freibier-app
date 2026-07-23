@@ -1,1 +1,68 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🍺 Freibier Scanner</title>
 
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+
+    <!-- Firebase -->
+    <script type="module" src="firebase.js"></script>
+    <script type="module" src="app.js"></script>
+</head>
+
+<body>
+
+<header>
+    <h1>🍺 Freibier Scanner</h1>
+    <p>Feuerwehr Perouse</p>
+</header>
+
+<main>
+
+    <div id="scanner">
+        <h2>QR-Code scannen</h2>
+
+        <div id="reader"></div>
+
+        <button id="startScanner">
+            Scanner starten
+        </button>
+    </div>
+
+
+    <div id="memberCard" class="hidden">
+
+        <h2>Mitglied</h2>
+
+        <h3 id="memberNumber">-</h3>
+
+        <div class="beerInfo">
+
+            <div class="beerBox">
+                <span>Bereits erhalten</span>
+                <strong id="usedBeer">0</strong>
+            </div>
+
+            <div class="beerBox">
+                <span>Noch frei</span>
+                <strong id="remainingBeer">2</strong>
+            </div>
+
+        </div>
+
+        <button id="giveBeer">
+            🍺 Bier ausgeben
+        </button>
+
+    </div>
+
+
+    <div id="message"></div>
+
+</main>
+
+</body>
+</html>

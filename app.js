@@ -14,7 +14,7 @@ function startScanner() {
         },
         (decodedText) => {
             
-            alert(decodedText);
+    console.log(document.getElementById("memberCard"));
 
             document.getElementById("memberCard").classList.remove("hidden");
             document.getElementById("memberNumber").textContent = decodedText;

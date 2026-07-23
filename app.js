@@ -57,8 +57,10 @@ function startScanner() {
 
     });
 
-            scanner.stop();
-            document.getElementById("scanner").style.display = "none";
+          document.getElementById("scanner").style.display = "none";
+
+scanner.stop();
+          
 
         },
         (errorMessage) => {

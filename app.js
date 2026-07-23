@@ -42,8 +42,20 @@ function startScanner() {
             currentMember = decodedText;
 
             document.getElementById("memberNumber").textContent = currentMember;
+           db.collection("members")
+    .doc(currentMember)
+    .get()
+    .then((doc) => {
+
+        if (doc.exists) {
+            document.getElementById("usedBeer").textContent = doc.data().beers;
+            document.getElementById("remainingBeer").textContent = 2 - doc.data().beers;
+        } else {
             document.getElementById("usedBeer").textContent = "0";
             document.getElementById("remainingBeer").textContent = "2";
+        }
+
+    });
 
             scanner.stop();
             document.getElementById("scanner").style.display = "none";

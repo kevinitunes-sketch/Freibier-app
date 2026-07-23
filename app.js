@@ -11,14 +11,24 @@ giveBeerButton.addEventListener("click", () => {
   if (currentMember === "") {
     return;
 }
-
+if (currentBeers >= 2) {
+    alert("Dieses Mitglied hat bereits alle 2 Freibiere erhalten.");
+    return;
+}
 db.collection("members")
   .doc(currentMember)
  .set({
     beers: currentBeers + 1
 }, { merge: true })
- .then(() => {
-    alert("Gespeichert: " + (currentBeers + 1));
+.then(() => {
+
+    currentBeers++;
+
+    document.getElementById("usedBeer").textContent = currentBeers;
+    document.getElementById("remainingBeer").textContent = 2 - currentBeers;
+
+    alert("Gespeichert");
+
 })
   .catch((error) => {
     console.error(error);

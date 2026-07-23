@@ -3,7 +3,7 @@ let currentBeers = 0;
 
 const giveBeerButton = document.getElementById("giveBeer");
 const scannerButton = document.getElementById("startScanner");
-
+let scanner;
 scannerButton.addEventListener("click", startScanner);
 
 giveBeerButton.addEventListener("click", () => {
@@ -60,7 +60,7 @@ db.collection("members")
 
 function startScanner() {
 
-    const scanner = new Html5Qrcode("reader");
+   scanner = new Html5Qrcode("reader");
 
     scanner.start(
         { facingMode: "environment" },
@@ -104,9 +104,7 @@ function startScanner() {
 
     });
 
-          document.getElementById("scanner").style.display = "none";
-
-scanner.stop();
+       
           
 
         },

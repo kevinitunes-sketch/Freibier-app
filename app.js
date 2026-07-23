@@ -1,3 +1,6 @@
+let currentMember = "";
+
+const giveBeerButton = document.getElementById("giveBeer");
 const scannerButton = document.getElementById("startScanner");
 
 scannerButton.addEventListener("click", startScanner);

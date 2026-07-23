@@ -1,11 +1,14 @@
-alert("App gestartet");
 let currentMember = "";
 const giveBeerButton = document.getElementById("giveBeer");
 const scannerButton = document.getElementById("startScanner");
 
 scannerButton.addEventListener("click", startScanner);
 giveBeerButton.addEventListener("click", () => {
-    alert("Bier wurde ausgegeben!");
+    if (currentMember === "") {
+    return;
+}
+
+alert(currentMember);
 });
 
 function startScanner() {
@@ -22,7 +25,9 @@ function startScanner() {
             
 
             document.getElementById("memberCard").classList.remove("hidden");
-            document.getElementById("memberNumber").textContent = decodedText;
+currentMember = decodedText;
+
+document.getElementById("memberNumber").textContent = currentMember;
             document.getElementById("usedBeer").textContent = "0";
             document.getElementById("remainingBeer").textContent = "2";
 

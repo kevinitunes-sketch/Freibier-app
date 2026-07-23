@@ -32,7 +32,8 @@ db.collection("members")
         return;
     }
 
-    return db.collection("members")
+    alert("Vor dem Speichern");
+return db.collection("members")
       .doc(currentMember)
       .set({
           beers: beers + 1

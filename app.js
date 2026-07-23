@@ -18,6 +18,7 @@ db.collection("members")
     beers: currentBeers + 1
 }, { merge: true })
   .then(() => {
+    alert("currentBeers vorher: " + currentBeers);
     currentBeers++;
 
 document.getElementById("usedBeer").textContent = currentBeers;

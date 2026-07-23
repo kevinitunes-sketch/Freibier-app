@@ -15,6 +15,12 @@ db.collection("members")
   .doc(currentMember)
   .set({
       beers: 1
+  })
+  .then(() => {
+      alert("Gespeichert");
+  })
+  .catch((error) => {
+      alert(error.message);
   });
 });
 

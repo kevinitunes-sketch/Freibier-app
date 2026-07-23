@@ -34,10 +34,13 @@ db.collection("members")
 
     alert("Vor dem Speichern");
 return db.collection("members")
-      .doc(currentMember)
-      .set({
-          beers: beers + 1
-      }, { merge: true });
+    .doc(currentMember)
+    .set({
+        beers: beers + 1
+    }, { merge: true })
+    .then(() => {
+        alert("Speichern erfolgreich");
+    });
 
 })
 .then((result) => {

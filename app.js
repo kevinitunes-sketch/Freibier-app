@@ -32,7 +32,7 @@ db.collection("members")
         return;
     }
 
-    alert("Vor dem Speichern");
+
 return db.collection("members")
     .doc(currentMember)
     .set({

@@ -13,6 +13,8 @@ function startScanner() {
             qrbox: 250
         },
         (decodedText) => {
+            
+            alert(decodedText);
 
             document.getElementById("memberCard").classList.remove("hidden");
             document.getElementById("memberNumber").textContent = decodedText;

@@ -11,6 +11,7 @@ giveBeerButton.addEventListener("click", () => {
   if (currentMember === "") {
     return;
 }
+  alert("currentBeers = " + currentBeers);
 if (currentBeers >= 2) {
     alert("Dieses Mitglied hat bereits alle 2 Freibiere erhalten.");
     return;

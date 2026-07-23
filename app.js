@@ -52,11 +52,12 @@ function startScanner() {
     alert(JSON.stringify(doc.data()));
 
     document.getElementById("usedBeer").textContent = doc.data().beers;
+        alert(document.getElementById("usedBeer").textContent);
     document.getElementById("remainingBeer").textContent = 2 - doc.data().beers;
 
 } else {
             document.getElementById("usedBeer").textContent = "0";
-       alert(document.getElementById("usedBeer").textContent);
+      
             document.getElementById("remainingBeer").textContent = "2";
         }
 

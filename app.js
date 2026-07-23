@@ -1,4 +1,5 @@
 let currentMember = "";
+let currentBeers = 0;
 
 const giveBeerButton = document.getElementById("giveBeer");
 const scannerButton = document.getElementById("startScanner");
@@ -13,8 +14,8 @@ giveBeerButton.addEventListener("click", () => {
 
 db.collection("members")
   .doc(currentMember)
-  .set({
-    beers: 1
+ .set({
+    beers: currentBeers + 1
 }, { merge: true })
   .then(() => {
       alert("Gespeichert");
@@ -40,6 +41,7 @@ function startScanner() {
             document.getElementById("memberCard").classList.remove("hidden");
 
             currentMember = decodedText;
+        
 
             document.getElementById("memberNumber").textContent = currentMember;
            db.collection("members")
@@ -52,11 +54,13 @@ function startScanner() {
     alert(JSON.stringify(doc.data()));
 
     document.getElementById("usedBeer").textContent = doc.data().beers;
+       currentBeers = doc.data().beers;
         alert(document.getElementById("usedBeer").textContent);
     document.getElementById("remainingBeer").textContent = 2 - doc.data().beers;
 
 } else {
             document.getElementById("usedBeer").textContent = "0";
+       currentBeers = 0;
       
             document.getElementById("remainingBeer").textContent = "2";
         }

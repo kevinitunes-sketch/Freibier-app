@@ -11,24 +11,44 @@ giveBeerButton.addEventListener("click", () => {
   if (currentMember === "") {
     return;
 }
-  alert("currentBeers = " + currentBeers);
+ 
 if (currentBeers >= 2) {
     alert("Dieses Mitglied hat bereits alle 2 Freibiere erhalten.");
     return;
 }
 db.collection("members")
   .doc(currentMember)
- .set({
-    beers: currentBeers + 1
-}, { merge: true })
-.then(() => {
+  .get()
+  .then((doc) => {
+
+    let beers = 0;
+
+    if (doc.exists) {
+        beers = doc.data().beers || 0;
+    }
+
+    if (beers >= 2) {
+        alert("Dieses Mitglied hat bereits alle 2 Freibiere erhalten.");
+        return;
+    }
+
+    return db.collection("members")
+      .doc(currentMember)
+      .set({
+          beers: beers + 1
+      }, { merge: true });
+
+})
+.then((result) => {
+
+    if (!result) {
+        return;
+    }
 
     currentBeers++;
 
     document.getElementById("usedBeer").textContent = currentBeers;
     document.getElementById("remainingBeer").textContent = 2 - currentBeers;
-
-    alert("Gespeichert");
 
 })
   .catch((error) => {

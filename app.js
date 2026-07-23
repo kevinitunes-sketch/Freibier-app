@@ -17,14 +17,9 @@ db.collection("members")
  .set({
     beers: currentBeers + 1
 }, { merge: true })
-  .then(() => {
-    alert("currentBeers vorher: " + currentBeers);
-    currentBeers++;
-
-document.getElementById("usedBeer").textContent = currentBeers;
-document.getElementById("remainingBeer").textContent = 2 - currentBeers;
-      alert("Gespeichert");
-  })
+ .then(() => {
+    alert("Gespeichert: " + (currentBeers + 1));
+})
   .catch((error) => {
     console.error(error);
       alert(error.message);

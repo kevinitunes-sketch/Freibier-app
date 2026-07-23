@@ -18,6 +18,10 @@ db.collection("members")
     beers: currentBeers + 1
 }, { merge: true })
   .then(() => {
+    currentBeers++;
+
+document.getElementById("usedBeer").textContent = currentBeers;
+document.getElementById("remainingBeer").textContent = 2 - currentBeers;
       alert("Gespeichert");
   })
   .catch((error) => {

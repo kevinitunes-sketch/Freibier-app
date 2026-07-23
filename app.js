@@ -41,14 +41,16 @@ db.collection("members")
 })
 .then((result) => {
 
-    if (!result) {
-        return;
-    }
+   
 
-    currentBeers++;
+  currentBeers++;
 
-    document.getElementById("usedBeer").textContent = currentBeers;
-    document.getElementById("remainingBeer").textContent = 2 - currentBeers;
+document.getElementById("usedBeer").textContent = currentBeers;
+document.getElementById("remainingBeer").textContent = 2 - currentBeers;
+
+if (currentBeers >= 2) {
+    giveBeerButton.disabled = true;
+}
 
 
 })

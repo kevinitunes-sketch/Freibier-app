@@ -4,6 +4,9 @@ const giveBeerButton = document.getElementById("giveBeer");
 const scannerButton = document.getElementById("startScanner");
 
 scannerButton.addEventListener("click", startScanner);
+giveBeerButton.addEventListener("click", () => {
+    alert("Bier wurde ausgegeben!");
+});
 
 function startScanner() {
 

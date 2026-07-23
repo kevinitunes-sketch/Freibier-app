@@ -1,5 +1,5 @@
+alert("App gestartet");
 let currentMember = "";
-
 const giveBeerButton = document.getElementById("giveBeer");
 const scannerButton = document.getElementById("startScanner");
 

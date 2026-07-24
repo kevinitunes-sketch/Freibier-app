@@ -81,6 +81,7 @@ function startScanner() {
 
 scanner.stop().then(() => {
     scanner.clear();
+    scanner = null;
 });
 
             currentMember = decodedText;

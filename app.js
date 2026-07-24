@@ -77,6 +77,11 @@ function startScanner() {
         (decodedText) => {
 
             document.getElementById("memberCard").classList.remove("hidden");
+          document.getElementById("scanner").classList.add("hidden");
+
+scanner.stop().then(() => {
+    scanner.clear();
+});
 
             currentMember = decodedText;
         

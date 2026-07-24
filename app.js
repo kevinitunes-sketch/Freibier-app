@@ -39,7 +39,7 @@ return db.collection("members")
         beers: beers + 1
     }, { merge: true })
     .then(() => {
-        alert("Speichern erfolgreich");
+   
     });
 
 })

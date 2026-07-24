@@ -45,9 +45,7 @@ return db.collection("members")
             totalBeers: firebase.firestore.FieldValue.increment(1)
         }, { merge: true });
 })
-    .then(() => {
    
-    });
 
 })
 .then((result) => {

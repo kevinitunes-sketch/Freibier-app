@@ -35,9 +35,16 @@ db.collection("members")
 
 return db.collection("members")
     .doc(currentMember)
-    .set({
-        beers: beers + 1
-    }, { merge: true })
+  .set({
+    beers: beers + 1
+}, { merge: true })
+.then(() => {
+    return db.collection("stats")
+        .doc("event")
+        .set({
+            totalBeers: firebase.firestore.FieldValue.increment(1)
+        }, { merge: true });
+})
     .then(() => {
    
     });
